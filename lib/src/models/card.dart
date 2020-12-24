@@ -37,7 +37,7 @@ class StripeCard {
   ///
   /// @return {@code true} if valid, {@code false} otherwise
   bool validateDate() {
-    return _ccValidator.validateExpDate('$expMonth/$expYear').isValid;
+    return _ccValidator.validateExpDate('${NumberFormat("00").format(expMonth?? 0)}/$expYear').isValid;
   }
 
   /// Checks whether or not the {@link #cvc} field is valid.

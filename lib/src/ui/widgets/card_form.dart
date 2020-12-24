@@ -131,24 +131,26 @@ class _CardFormState extends State<CardForm> {
                     ),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  margin: const EdgeInsets.only(top: 8),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    textInputAction: TextInputAction.done,
-                    initialValue: _validationModel.postalCode ?? widget.card.postalCode,
-                    onChanged: (text) => setState(() => _validationModel.postalCode = text),
-                    onSaved: (text) => widget.card.postalCode = text,
-                    autofillHints: [AutofillHints.postalCode],
-                    validator: (text) => _validationModel.isPostalCodeValid()
-                        ? null
-                        : widget.postalCodeErrorText ?? 'Invalid postal code',
-                    style: widget.postalCodeTextStyle ?? TextStyle(color: Colors.black),
-                    decoration: widget.postalCodeDecoration ??
-                        InputDecoration(border: OutlineInputBorder(), labelText: 'Postal code'),
-                  ),
-                )
+                
+                // Postal Code
+                // Container(
+                //   padding: const EdgeInsets.symmetric(vertical: 8.0),
+                //   margin: const EdgeInsets.only(top: 8),
+                //   child: TextFormField(
+                //     keyboardType: TextInputType.number,
+                //     textInputAction: TextInputAction.done,
+                //     initialValue: _validationModel.postalCode ?? widget.card.postalCode,
+                //     onChanged: (text) => setState(() => _validationModel.postalCode = text),
+                //     onSaved: (text) => widget.card.postalCode = text,
+                //     autofillHints: [AutofillHints.postalCode],
+                //     validator: (text) => _validationModel.isPostalCodeValid()
+                //         ? null
+                //         : widget.postalCodeErrorText ?? 'Invalid postal code',
+                //     style: widget.postalCodeTextStyle ?? TextStyle(color: Colors.black),
+                //     decoration: widget.postalCodeDecoration ??
+                //         InputDecoration(border: OutlineInputBorder(), labelText: 'Postal code'),
+                //   ),
+                // )
               ],
             ),
           ),
