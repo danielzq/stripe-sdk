@@ -1,4 +1,5 @@
 import 'package:credit_card_validator/credit_card_validator.dart';
+import 'package:intl/intl.dart';
 
 class StripeCard {
   final _ccValidator = CreditCardValidator();
