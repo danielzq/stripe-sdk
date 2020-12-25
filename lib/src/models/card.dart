@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 class StripeCard {
   final _ccValidator = CreditCardValidator();
 
+  String name;
   String number;
   String cvc;
   int expMonth;
@@ -12,12 +13,17 @@ class StripeCard {
   String postalCode;
 
   StripeCard({
+    this.name,
     this.number,
     this.cvc,
     this.expMonth,
     this.expYear,
     this.last4,
   });
+
+  bool isNameValid() {
+    return name != null && name != '';
+  }
 
   /// Checks whether or not the {@link #number} field is valid.
   ///
@@ -61,6 +67,7 @@ class StripeCard {
     final map = <String, dynamic>{
       'type': 'card',
       'card': {
+        'name': name,
         'number': number,
         'cvc': cvc,
         'exp_month': expMonth,
